@@ -1,0 +1,19 @@
+ext {
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 20,
+            targetSdkVersion : 29,
+            versionCode      : 10001,
+            versionName      : "1.0.1"
+    ]
+
+    //签名配置
+    signs = [
+            storeFile    : "../kefan.jks",
+            storePassword: "kefan0721",
+            keyAlias     : "kefan",
+            keyPassword  : "kefan0721",
+    ]
+
+}
