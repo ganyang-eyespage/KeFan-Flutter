@@ -4,8 +4,11 @@ import 'package:kefan_flutter/common/common.dart';
 import 'package:kefan_flutter/data/api/apis_service.dart';
 import 'package:kefan_flutter/data/model/rank_model.dart';
 import 'package:kefan_flutter/ui/base_widget.dart';
+import 'package:kefan_flutter/ui/qr_scan_screen.dart';
+import 'package:kefan_flutter/utils/page_jump_util.dart';
 import 'package:kefan_flutter/utils/toast_util.dart';
 import 'package:kefan_flutter/widgets/refresh_helper.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 /// 积分排行榜页面
@@ -116,7 +119,8 @@ class RankScreenState extends BaseWidgetState<RankScreen> {
     RankBean item = _rankList[index];
     return Column(
       children: <Widget>[
-        Container(
+
+        InkWell(child: Container(
           padding: EdgeInsets.fromLTRB(0, 16, 16, 16),
           child: Row(
             children: <Widget>[
@@ -138,10 +142,35 @@ class RankScreenState extends BaseWidgetState<RankScreen> {
             ],
           ),
         ),
+        onTap: (){
+          // T.show(msg: "${index}");
+          // PageJumpUtil.jumpPushNamed(context, ORouter.webview_page, {
+          //   Constants.WEBVIEW_URL: Apis.TEST_URL,
+          //   Constants.WEBVIEW_TITLE: "Terms and Conditions"
+          // });
+          _goToScanQr();
+        }
+        ),
         Divider(height: 1.0)
       ],
     );
   }
+
+  ///扫描二维码页 TODO: TUCAI
+  void _goToScanQr() async {
+    Future.delayed(Duration(milliseconds: 100)).then((e) async {
+      if (await Permission.camera.request().isGranted) {
+        String qrResult =
+        await PageJumpUtil.jumpPushReturn(context, QRScanPage()) as String;
+        setState(() {
+          if (qrResult != null && qrResult.length > 0) {
+            T.show(msg: qrResult);
+          }
+        });
+      }
+    });
+  }
+
 
   @override
   void onClickErrorWidget() {

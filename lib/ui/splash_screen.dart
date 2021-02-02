@@ -36,7 +36,6 @@ class SplashScreenState extends State<SplashScreen> {
         children: <Widget>[
           Container( // 欢迎页面
             color: Theme.of(context).primaryColor,
-            // ThemeUtils.dark ? Color(0xFF212A2F) : Colors.grey[200],
             alignment: Alignment.center,
             child: new Column(
               mainAxisAlignment: MainAxisAlignment.center,

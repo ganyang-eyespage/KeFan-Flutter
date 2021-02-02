@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kefan_flutter/common/common.dart';
 import 'package:kefan_flutter/ui/login_screen.dart';
 import 'package:kefan_flutter/ui/rank_screen.dart';
+import 'package:kefan_flutter/ui/webview_screen.dart';
 import 'package:kefan_flutter/utils/router_utils.dart';
 
 
@@ -41,17 +43,17 @@ class ORouter {
       case rank_page:
         return Right2LeftRouter(child: RankScreen());
 
-      // case webview_page:
-      //   var args = settings.arguments;
-      //   String url;
-      //   String title;
-      //   if (args is Map<String, dynamic>) {
-      //     url = args[webview_url];
-      //     title = args[webview_title];
-      //   } else {
-      //     assert(false, "args error");
-      //   }
-      //   return FadeRouter(child: WebViewPage(url, title));
+      case webview_page:
+        var args = settings.arguments;
+        String url;
+        String title;
+        if (args is Map<String, dynamic>) {
+          url = args[Constants.WEBVIEW_URL];
+          title = args[Constants.WEBVIEW_TITLE];
+        } else {
+          assert(false, "args error");
+        }
+        return FadeRouter(child: WebViewPage(url, title));
 
       default:
         return MaterialPageRoute(

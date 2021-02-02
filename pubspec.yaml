@@ -37,7 +37,7 @@ dependencies:
   # Toast插件 https://github.com/PonnamKarthik/FlutterToast
   fluttertoast: ^3.1.0
   # WebView插件 https://pub.flutter-io.cn/packages/flutter_webview_plugin
-  flutter_webview_plugin: ^0.3.8
+  flutter_webview_plugin: ^0.3.11
   # webview_flutter
   #webview_flutter: ^0.3.9+1
   # Dart 常用工具类库 https://github.com/Sky24n/common_utils
@@ -46,6 +46,15 @@ dependencies:
   flutter_screenutil: ^3.2.0
   # 上拉加载和下拉刷新的组件 https://pub.dev/packages/pull_to_refresh/versions
   pull_to_refresh: 1.6.3
+
+  # 二维码生成 https://pub.dev/packages/qr_flutter
+  qr_flutter: ^3.2.0
+
+  # 二维码扫描 https://pub.dev/packages/qr_code_scanner
+  qr_code_scanner: ^0.2.1
+
+  # 权限管理 https://pub.dev/packages/permission_handler
+  permission_handler: ^5.0.1
 
 dev_dependencies:
   flutter_test:

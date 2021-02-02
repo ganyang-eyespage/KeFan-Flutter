@@ -6,4 +6,10 @@ class Apis {
 
   /// 积分排行榜
   static const String RANK_LIST = BASE_HOST + "/coin/rank";
+
+
+
+  ///TODO: TUCAI test WebView URL
+  static const String TEST_URL = "http://t1.dev.oconnection.eu/terms-of-service";
+
 }

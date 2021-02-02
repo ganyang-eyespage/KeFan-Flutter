@@ -12,6 +12,9 @@ class Constants {
 
   static const String SAVE_USER_LOGIN_KEY = "user/login";
   static const String SAVE_USER_REGISTER_KEY = "user/register";
+
+  static const String WEBVIEW_TITLE = "webview_title";
+  static const String WEBVIEW_URL = "webview_url";
 }
 
 class AppConfig {
